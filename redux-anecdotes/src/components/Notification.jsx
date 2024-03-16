@@ -1,3 +1,6 @@
+// todo
+// 6.12 Better anecdotes, step10
+
 const Notification = () => {
   const style = {
     border: 'solid',
