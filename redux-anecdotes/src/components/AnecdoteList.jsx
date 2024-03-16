@@ -12,6 +12,7 @@ const AnecdoteList = () => {
   const vote = (id) => {
     console.log('vote', id)
     dispatch(voteUp(id))
+    // dispatch({ type: 'anecdotes/voteUp', payload: id })
   }
 
   return (
