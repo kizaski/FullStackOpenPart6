@@ -1,16 +1,36 @@
-// todo
-// 6.12 Better anecdotes, step10
+import { useSelector, useDispatch } from 'react-redux'
+import { notificationChange } from '../reducers/notificationReducer'
+import { useEffect } from 'react'
+
 
 const Notification = () => {
+  const dispatch = useDispatch()
+
+  const notification = useSelector(state => state.notification)
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      dispatch(notificationChange(''));
+    }, 5000);
+
+    return () => clearTimeout(timeoutId);
+  }, [notification, dispatch]);
+
   const style = {
     border: 'solid',
     padding: 10,
     borderWidth: 1
   }
+
   return (
-    <div style={style}>
-      render here notification...
-    </div>
+    <>
+    {notification !== '' ?
+      <div style={style}>
+        {notification}
+      </div>
+      : 
+      <div></div>}
+    </>
   )
 }
 
