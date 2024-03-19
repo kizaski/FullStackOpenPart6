@@ -59,7 +59,6 @@ export const createAnecdote = (content) => {
   }
 }
 
-// exc 6.18
 export const voteUp = (id) => {
   return async dispatch => {
     await anecdoteService.voteUp(id)

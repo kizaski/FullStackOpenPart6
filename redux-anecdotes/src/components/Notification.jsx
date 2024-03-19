@@ -10,11 +10,11 @@ const Notification = () => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      dispatch(notificationChange(''));
-    }, 5000);
+      dispatch(notificationChange(''))
+    }, 5000)
 
-    return () => clearTimeout(timeoutId);
-  }, [notification, dispatch]);
+    return () => clearTimeout(timeoutId)
+  }, [notification, dispatch])
 
   const style = {
     border: 'solid',

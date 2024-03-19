@@ -18,6 +18,7 @@ const AnecdoteList = () => {
     // dispatch({ type: 'anecdotes/voteUp', payload: id })
     const votedAnecdote = anecdotes.find(an => an.id === id)
     dispatch(notificationChange(`voted ${votedAnecdote.content}`))
+    // dispatch(setNotification(`you voted '${votedAnecdote.content}'`, 10))
   }
 
   return (
