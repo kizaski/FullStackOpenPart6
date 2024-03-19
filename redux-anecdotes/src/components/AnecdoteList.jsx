@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { voteUp } from '../reducers/anecdoteReducer'
-import { notificationChange } from '../reducers/notificationReducer'
+import { setNotification } from '../reducers/notificationReducer'
 
 const AnecdoteList = () => {
   const filter = useSelector(state => state.filter)
@@ -17,8 +17,11 @@ const AnecdoteList = () => {
     dispatch(voteUp(id))
     // dispatch({ type: 'anecdotes/voteUp', payload: id })
     const votedAnecdote = anecdotes.find(an => an.id === id)
-    dispatch(notificationChange(`voted ${votedAnecdote.content}`))
+
+    // dispatch(notificationChange(`voted ${votedAnecdote.content}`))
     // dispatch(setNotification(`you voted '${votedAnecdote.content}'`, 10))
+    // dispatch(notificationChange({notification: `voted ${votedAnecdote.content}`}))
+    dispatch(setNotification(`voted ${votedAnecdote.content}`, 3))
   }
 
   return (

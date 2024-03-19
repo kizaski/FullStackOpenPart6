@@ -6,15 +6,16 @@ import { useEffect } from 'react'
 const Notification = () => {
   const dispatch = useDispatch()
 
-  const notification = useSelector(state => state.notification)
+  const notification = useSelector(state => state.notification.notification)
+  const duration = useSelector(state => state.notification.duration)
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      dispatch(notificationChange(''))
-    }, 5000)
+      dispatch(notificationChange({notification: ''}))
+    }, duration)
 
     return () => clearTimeout(timeoutId)
-  }, [notification, dispatch])
+  }, [notification, duration, dispatch])
 
   const style = {
     border: 'solid',
