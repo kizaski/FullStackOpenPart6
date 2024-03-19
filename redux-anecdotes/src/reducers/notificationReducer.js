@@ -15,4 +15,7 @@ const notificationSlice = createSlice({
 })
 
 export const { notificationChange } = notificationSlice.actions
+
+// exc 6.19
+
 export default notificationSlice.reducer
