@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import NotificationContext from "../NotificationContext"
 
 const Notification = () => {
   const [notif, dispatch] = useContext(NotificationContext)
+  const [visible, setVisible] = useState(true)
 
   const style = {
     border: 'solid',
@@ -13,6 +14,16 @@ const Notification = () => {
   }
   
   if (!notif) { return null }
+  // useEffect(() => {
+  //   if (notif) {
+  //     setTimeout(() => {
+  //       setVisible(false)
+  //       dispatch('')
+  //     }, 3000)
+  //   }
+  // }, [notif, dispatch])
+
+  // if (!visible) { return null }
 
   return (
     <div style={style}>
