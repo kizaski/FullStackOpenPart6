@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
-const Notification = ( { message, type } ) => {
+import { useContext } from 'react'
+import NotificationContext from "../NotificationContext"
+
+const Notification = () => {
+  const [notif, dispatch] = useContext(NotificationContext)
+
   const style = {
     border: 'solid',
     padding: 10,
@@ -7,11 +12,11 @@ const Notification = ( { message, type } ) => {
     marginBottom: 5
   }
   
-  if (!message) return null
+  if (!notif) return null
 
   return (
-    <div className={ type } style={style}>
-      { message }
+    <div style={style}>
+      { notif }
     </div>
   )
 }

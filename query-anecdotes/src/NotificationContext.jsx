@@ -4,7 +4,7 @@ import { createContext, useReducer, useContext  } from 'react'
 
 const notificationReducer = (state, action) => {
   switch (action.type) {
-    case "INC":
+    case "ERROR":
         return state + 1
     case "DEC":
         return state - 1
