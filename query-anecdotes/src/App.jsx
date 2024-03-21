@@ -18,6 +18,7 @@ const App = () => {
   const handleVote = (anecdote) => {
     console.log('vote')
     updateAnecdoteMutation.mutate({...anecdote, votes: anecdote.votes + 1 })
+    // msg: `voted '{anecdote}'`
     dispatchNotif({type: "ERROR"})
   }
 
