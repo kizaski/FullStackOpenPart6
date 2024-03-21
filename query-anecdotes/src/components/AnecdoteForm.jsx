@@ -12,8 +12,7 @@ const AnecdoteForm = () => {
       queryClient.invalidateQueries({ queryKey: ['anecdotes'] })
     },
     onError: (e) => {
-      // msg: e
-      dispatchNotif({type: "ERROR"})
+      dispatchNotif({msg: e.response.data.error})
     }
   })
 

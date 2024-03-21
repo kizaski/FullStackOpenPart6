@@ -3,16 +3,7 @@
 import { createContext, useReducer, useContext  } from 'react'
 
 const notificationReducer = (state, action) => {
-  switch (action.type) {
-    case "ERROR":
-        return state + 1
-    case "DEC":
-        return state - 1
-    case "ZERO":
-        return 0
-    default:
-        return state
-  }
+    return action.msg
 }
 
 const NotificationContext = createContext()
