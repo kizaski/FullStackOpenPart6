@@ -4,7 +4,6 @@ import NotificationContext from "../NotificationContext"
 
 const Notification = () => {
   const [notif, dispatch] = useContext(NotificationContext)
-  const [visible, setVisible] = useState(true)
 
   const style = {
     border: 'solid',
@@ -13,17 +12,15 @@ const Notification = () => {
     marginBottom: 5
   }
   
+  useEffect(() => {
+    if (notif) {
+      setTimeout(() => {
+        dispatch('')
+      }, 3000)
+    }
+  }, [notif, dispatch])
+  
   if (!notif) { return null }
-  // useEffect(() => {
-  //   if (notif) {
-  //     setTimeout(() => {
-  //       setVisible(false)
-  //       dispatch('')
-  //     }, 3000)
-  //   }
-  // }, [notif, dispatch])
-
-  // if (!visible) { return null }
 
   return (
     <div style={style}>
