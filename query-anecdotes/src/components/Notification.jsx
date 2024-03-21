@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import NotificationContext from "../NotificationContext"
 
 const Notification = () => {
@@ -12,7 +12,7 @@ const Notification = () => {
     marginBottom: 5
   }
   
-  if (!notif) return null
+  if (!notif) { return null }
 
   return (
     <div style={style}>
