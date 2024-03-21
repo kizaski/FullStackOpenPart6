@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import NotificationContext from "../NotificationContext"
 
 const Notification = () => {
